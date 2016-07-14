@@ -2,36 +2,32 @@
 """
 Created on Tue Jul 12 11:06:50 2016
 
-@author: USJADES
+@author: Jaydeep Deshpande
 """
+# this part is to fix the encoding issue with pandas export
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
+# do not edit anything above this line
 
 # code for productivity tracking 
-import time
-from ctypes import Structure, windll, c_uint, sizeof, byref
-import win32gui
-w=win32gui
-def findwindow():
-    openwindow = w.GetWindowText (w.GetForegroundWindow())
-    return openwindow
-# http://stackoverflow.com/questions/911856/detecting-idle-time-in-python
+import time # required for putting the code to sleep
+import idle # required to find the idle time 
+import gettimestamp # required to find current clock state
+import openwindows as ow # required to find current active window
+import pandas as pd
+id = 0 ## start idle time just to get into the loop, loop should never end    
+df = pd.DataFrame(columns=['month','date','hour','minute','second','active'])
+writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
+#df.columns=['', '', '','', '', '','', '', '',]
+while (id<15):
+    A = ow.findwindow()
+    T = gettimestamp.gettime()
+    Q = [[T[1],T[2],T[3],T[4],T[5],A]]
+    df = df.append(pd.DataFrame(Q, columns=['month','date','hour','minute','second','active']), ignore_index=True)
+    df.to_excel(writer, sheet_name='Sheet1')    
+    time.sleep(1)
+    id = idle.get_idle_duration()
 
-class LASTINPUTINFO(Structure):
-    _fields_ = [
-        ('cbSize', c_uint),
-        ('dwTime', c_uint),
-    ]
- 
-def get_idle_duration():
-    lastInputInfo = LASTINPUTINFO()
-    lastInputInfo.cbSize = sizeof(lastInputInfo)
-    windll.user32.GetLastInputInfo(byref(lastInputInfo))
-    millis = windll.kernel32.GetTickCount() - lastInputInfo.dwTime
-    return millis / 1000.0
-
-idle = 0    
-while (idle<10):
-    idle = get_idle_duration()
-    if idle==0:
-        print findwindow()
-        time.sleep(5)
-print 'endrun'
+print 'EndRun'
+writer.save()
