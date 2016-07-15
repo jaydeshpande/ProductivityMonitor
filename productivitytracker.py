@@ -16,18 +16,29 @@ import idle # required to find the idle time
 import gettimestamp # required to find current clock state
 import openwindows as ow # required to find current active window
 import pandas as pd
+flag = 1 ## flag for while loop 
 id = 0 ## start idle time just to get into the loop, loop should never end    
-df = pd.DataFrame(columns=['month','date','hour','minute','second','active'])
+df = pd.DataFrame(columns=['month','date','hour','minute','second','window','status'])
 writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
 #df.columns=['', '', '','', '', '','', '', '',]
-while (id<15):
-    A = ow.findwindow()
-    T = gettimestamp.gettime()
-    Q = [[T[1],T[2],T[3],T[4],T[5],A]]
-    df = df.append(pd.DataFrame(Q, columns=['month','date','hour','minute','second','active']), ignore_index=True)
-    df.to_excel(writer, sheet_name='Sheet1')    
-    time.sleep(1)
-    id = idle.get_idle_duration()
-
+while (flag==1):
+    if (id<180):
+        A = ow.findwindow()
+        T = gettimestamp.gettime()
+        Q = [[T[1],T[2],T[3],T[4],T[5],A, 'Active']]
+        df = df.append(pd.DataFrame(Q, columns=['month','date','hour','minute','second','window','status']), ignore_index=True)
+        df.to_excel(writer, sheet_name='Sheet1')    
+        time.sleep(1)
+        id = idle.get_idle_duration()
+    else:
+        Q = [[T[1],T[2],T[3],T[4],T[5],A,'Inactive']]
+        flag2 = 1
+        while (flag2==1):
+            time.sleep(5)
+            id = idle.get_idle_duration()
+            if (id<5):
+                flag2 = 2
+            else: 
+                flag2 = 1
 print 'EndRun'
 writer.save()
