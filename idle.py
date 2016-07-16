@@ -2,7 +2,7 @@
 """
 Created on Thu Jul 14 11:32:02 2016
 
-@author: USJADES
+@author: Jaydeep
 """
 
 from ctypes import Structure, windll, c_uint, sizeof, byref

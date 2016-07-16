@@ -2,7 +2,7 @@
 """
 Created on Thu Jul 14 12:11:31 2016
 
-@author: USJADES
+@author: Jaydeep
 """
 
 import win32gui

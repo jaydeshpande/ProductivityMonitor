@@ -2,10 +2,9 @@
 """
 Created on Wed Jul 13 13:49:22 2016
 
-@author: USJADES
+@author: Jaydeep
 """
 
-import win32gui
-w=win32gui
-test = w.GetWindowText (w.GetForegroundWindow())
-print test 
+from AppKit import NSWorkspace
+active_app_name = NSWorkspace.sharedWorkspace().frontmostApplication().localizedName()
+print active_app_name

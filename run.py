@@ -2,7 +2,7 @@
 """
 Created on Thu Jul 14 15:59:18 2016
 
-@author: USJADES
+@author: Jaydeep
 """
 import Tkinter as tk
 
