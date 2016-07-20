@@ -1,6 +1,6 @@
 import random
 import math
-import turtle
+#import turtle
 import time
 import Tkinter
 from Tkinter import *
