@@ -1,0 +1,6 @@
+Here are the instructions:
+1. Install Anaconda (https://www.continuum.io/downloads )
+2. Run productivitytracker_V2.py from Anaconda
+3. It will open a GUI with 2 buttons, click Start at the start of your day
+4. Once you finish your work, ready to go home, click Stop
+5. It will generate an excel file with all of the active windows with window titles and time stamps :)
