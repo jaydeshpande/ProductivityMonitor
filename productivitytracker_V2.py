@@ -9,6 +9,7 @@ import time
 import Tkinter
 from Tkinter import *
 import sys  
+import matplotlib.pyplot as plt
 reload(sys)  
 sys.setdefaultencoding('utf8')
 # do not edit anything above this line
@@ -23,6 +24,7 @@ root = Tkinter.Tk()
 
 id = 0 ## start idle time just to get into the loop, loop should never end    
 global df
+today = gettimestamp.gettime()
 writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
 # running = False
 
@@ -108,7 +110,7 @@ class Stopwatch(Frame):
 
     def quit(self):             #Quit the program
         root.destroy()
-
+        
 
 
 watch = Stopwatch(root)
