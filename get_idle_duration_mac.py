@@ -13,4 +13,4 @@ def getIdleTime():
 i=0;
 while (i<1):
 	idle = getIdleTime()
-	print idle
+	print (idle)

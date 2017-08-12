@@ -6,7 +6,9 @@ def getapp():
 	return active_app_name
 
 
-i=0
-while(i<1):
-	print getapp()
-	time.sleep(2)
+
+if __name__ == '__main__':
+    i=0
+    while(i<1):
+        print (getapp())
+        time.sleep(2)
