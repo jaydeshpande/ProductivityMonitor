@@ -4,3 +4,6 @@ Here are the instructions:
 3. It will open a GUI with 2 buttons, click Start at the start of your day
 4. Once you finish your work, ready to go home, click Stop
 5. It will generate an excel file with all of the active windows with window titles and time stamps :)
+
+
+Currently under active development. For last working copy: https://github.com/jaydeshpande/ProductivityMonitor/tree/cda166ad705721f98b833f8d095958d9a4482fb8
