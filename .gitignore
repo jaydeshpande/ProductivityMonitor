@@ -1,5 +1,6 @@
 *.xlsx
 *.xml
+*.pyc
 .idea/
 Old/
 TimeLog/*/
