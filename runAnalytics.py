@@ -20,7 +20,7 @@ def runAnalytics():
     return data.groupby(['Application'])['timeSpent'].sum()
 
 def createPie(data, debug = False):
-    fig, ax = plt.subplots(figsize=(8.5, 5), subplot_kw=dict(aspect="equal"))
+    fig, ax = plt.subplots(figsize=(10, 5), subplot_kw=dict(aspect="equal"))
 
     wedges, texts = ax.pie(data.values, wedgeprops=dict(width=0.5), startangle=-40)
 
@@ -38,7 +38,7 @@ def createPie(data, debug = False):
         ax.annotate(data.index.values[i], xy=(x, y), xytext=(1.35 * np.sign(x), 1.4 * y),
                     horizontalalignment=horizontalalignment, **kw)
 
-    ax.set_title("Application level time distribution")
+    #ax.set_title("Application level time distribution")
     plt.savefig(getDataDir() + '/' + 'TimePieChart.png', dpi = 100)
     if debug:
         plt.show()

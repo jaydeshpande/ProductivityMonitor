@@ -1,6 +1,15 @@
-Here are the instructions:
-1. Install Anaconda (https://www.continuum.io/downloads )
-2. Run scan_activities.py
-3. Once you finish your work, ready to go home, kill the script
-4. It will generate an excel file with all of the active windows with window titles and time stamps
-5. You will be able to see the pie chart of time spent distribution 
+##Support:
+* Currently supports Mac.
+* Please feel free to suggest features for Mac or other platforms
+
+##Pending items:
+* Creating daemon
+* Service start-stop features
+
+
+##How to run:
+* Install Anaconda (https://www.continuum.io/downloads)
+* Run scan_activities.py
+* Once you finish your work, ready to go home, kill the script
+* It will generate an csv file in TimeLog with timestamps and applications
+* You will be able to see the pie chart of time spent distribution in TimeLog
