@@ -12,4 +12,5 @@
 * Run scan_activities.py
 * Once you finish your work, ready to go home, kill the script
 * It will generate an csv file in TimeLog with timestamps and applications
+* Run runAnalytics.py
 * You will be able to see the pie chart of time spent distribution in TimeLog
