@@ -6,9 +6,9 @@ from datetime import datetime
 import csv
 
 #TODO parent directory is needed when activity tracker starts working over several days
-parent_directory = '/Users/JD/Desktop/hobby-codes/ProductivityMonitor'
 
 class activity_scanner:
+    parent_directory = os.getcwd()
     scanner_start_time = datetime.today()
     timeLogDir = 'TimeLog'
     storage_folder = str(scanner_start_time.year) + '-' + \

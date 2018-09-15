@@ -1,9 +1,6 @@
 Here are the instructions:
 1. Install Anaconda (https://www.continuum.io/downloads )
-2. Run productivitytracker_V2.py from Anaconda
-3. It will open a GUI with 2 buttons, click Start at the start of your day
-4. Once you finish your work, ready to go home, click Stop
-5. It will generate an excel file with all of the active windows with window titles and time stamps :)
-
-
-Currently under active development. For last working copy: https://github.com/jaydeshpande/ProductivityMonitor/tree/cda166ad705721f98b833f8d095958d9a4482fb8
+2. Run scan_activities.py
+3. Once you finish your work, ready to go home, kill the script
+4. It will generate an excel file with all of the active windows with window titles and time stamps
+5. You will be able to see the pie chart of time spent distribution 
