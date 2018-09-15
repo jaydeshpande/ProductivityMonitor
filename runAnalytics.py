@@ -20,6 +20,7 @@ def runAnalytics():
     return data.groupby(['Application'])['timeSpent'].sum()
 
 def createPie(data, debug = False):
+    # Code from matplotlib examples
     fig, ax = plt.subplots(figsize=(10, 5), subplot_kw=dict(aspect="equal"))
 
     wedges, texts = ax.pie(data.values, wedgeprops=dict(width=0.5), startangle=-40)
